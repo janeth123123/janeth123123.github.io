@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Delicious</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+       
+        .header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            border-color: white;
+            border-radius: 5px;
+        }
+
+       
+        .hero {
+            background-image: url('https://cf.shopee.co.id/file/77b85028b1254a4007d4c1a199e71ba0');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 200px 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1, .hero p, .hero button {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #cc7a00;
+        }
+
+        
+        .menu {
+            background-image: url('https://cf.shopee.co.id/file/77b85028b1254a4007d4c1a199e71ba0');
+            background-size: cover;
+            background-position: center;
+            color: rgb(32, 8, 8);
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .menu::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .menu table {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for table */
+        }
+
+        table, th, td {
+            border: 1px solid #baacac;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        td img {
+            margin-bottom: 5px;
+        }
+
+        
+        .payment-method {
+            margin: 20px 0;
+        }
+
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Delicious Restaurant</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Selamat Datang di Delicious Restaurant</h1>
+        <p>Rasakan Kuliner Terbaik Kami</p>
+        <button>Pesan Sekarang</button>
+    </section>
+<section class="menu">
+        <table>
+            <tr>
+                <th>Nama Menu</th>
+                <th>Jumlah</th>
+                <th>Harga Satuan</th>
+                <th>Total Harga</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="nasi-goreng.jpeg" alt="Nasi Goreng" width="70"> <br>
+                    Nasi Goreng Spesial
+                </td>
+                <td><input type="number"> Porsi</td>
+                <td>Rp 25.000</td>
+                <td>Rp 25.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Burger Cheese.png" alt="Burger Cheese" width="70"> <br>
+                    Burger Cheese
+                </td>
+                <td><input type="number"></td>
+                <td>Rp 35.000</td>
+                <td>Rp 70.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Ayam Bakar Pedas.png" alt="Ayam Bakar Pedas" width="70"> <br>
+                    Ayam Bakar Pedas
+                </td>
+                <td><input type="number"> Porsi</td>
+                <td>Rp 12.000</td>
+                <td>Rp 12.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Ayam Goreng Kremes.png" alt="Ayam Goreng Kremes" width="70"> <br>
+                    Ayam Goreng Kremes
+                </td>
+                <td><input type="number"> Porsi</td>
+                <td>Rp 12.000</td>
+                <td>Rp 12.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Nasi.png" alt="Nasi" width="70"> <br>
+                    Nasi
+                </td>
+                <td><input type="number"> Piring</td>
+                <td>Rp 5.000</td>
+                <td>Rp 10.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Vanilla Milkshake.png" alt="Vanilla Milkshake" width="70"> <br>
+                    Vanilla Milkshake
+                </td>
+                <td><input type="number"> Gelas</td>
+                <td>Rp 17.000</td>
+                <td>Rp 17.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Air Mineral.png" alt="Air Mineral" width="70"> <br>
+                    Air Mineral
+                </td>
+                <td><input type="number"> Botol</td>
+                <td>Rp 5.000</td>
+                <td>Rp 5.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Lemon Tea.png" alt="Lemon Tea" width="70"> <br>
+                    Lemon Tea
+                </td>
+                <td><input type="number"> Gelas</td>
+                <td>Rp 7.000</td>
+                <td>Rp 14.000</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="es-teh-manis.jpeg" alt="Es Teh Manis" width="70"> <br>
+                    Es Teh Manis
+                </td>
+                <td><input type="number"> Gelas</td>
+                <td>Rp 5.000</td>
+                <td>Rp 5.000</td>
+            </tr>
+            <tr>
+
+            <tr>
+                <th colspan="3">Total Pesanan</th>
+                <td>Rp 115.000</td>
+            </tr>
+            <tr>
+                <th colspan="3">Pajak</th>
+                <td>Rp 2.000</td>
+            </tr>
+            <tr>
+                <th colspan="3">Total Tagihan</th>
+                <td>Rp 117.000</td>
+            </tr>
+            <tr class="payment-method">
+                <td colspan="4"><b>Metode Pembayaran</b>:<br>
+                    <input type="radio" name="payment" value="Cash"> Cash 
+                    <input type="radio" name="payment" value="BCA"> Bank BCA 
+                    <input type="radio" name="payment" value="BRI"> Bank BRI
+                    <input type="radio" name="payment" value="OVO"> OVO
+                    <input type="radio" name="payment" value="GoPay"> GoPay 
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Delicious Restaurant. All rights reserved.</p>
+    </footer>
+    <ul>
+        <li> Nama: Junesty Todingbua'</li>
+        <li>NIM: 2309106140</li>
+        <li>Kelas Praktikum: C2 23</li>
+        <li>Praktikum Web: <a href="https://classroom.google.com/c/NzEwMjM1NjcxOTQw/a/NzA2MTI5MTczNjQz/details" target="blank">Posttest2</a>
+        </li>
+    </ul>
+</body>
+</html>
