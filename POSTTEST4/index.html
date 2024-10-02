@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunitas Pecinta Hewan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+            background-image: url('image.png'); 
+            background-size: cover; 
+            background-position: center;
+        }
+
+        header img {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            width: 80px; 
+            height: 80px; 
+        }
+
+        header {
+            padding: 15px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar-toggle {
+            display: none;
+            background-color: #333;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #navbar-links {
+            display: flex;
+        }
+
+        #navbar-links a {
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+            .navbar-toggle {
+                display: block;
+            }
+
+            #navbar-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #navbar-links a {
+                width: 100%;
+                text-align: left;
+                padding-left: 20px;
+            }
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .dark-mode {
+            background-color: #211b1e;
+            color: #fff;
+        }
+
+        footer {
+            color: rgb(25, 13, 13);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #darkModeToggle {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .popup-box {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: white;
+            border: 2px solid #333;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup-box.active {
+            display: block;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+
+        .popup-overlay.active {
+            display: block;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="number"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Komunitas Pecinta Hewan</h1>
+    </header>
+
+    <nav>
+        <a href="#" class="navbar-toggle" onclick="toggleNavbar()">☰</a>
+        <div id="navbar-links">
+            <a href="#">Beranda</a>
+            <a href="#about">Tentang Saya</a>
+            <button id="darkModeToggle" onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section" id="home">
+            <h2>Selamat Datang di Komunitas Pecinta Hewan</h2>
+            <p>Komunitas pencinta hewan adalah kumpulan orang yang memiliki kecintaan dan kegemaran pada hewan.
+                Setiap orang memiliki caranya sendiri dalam mencintai hewannya.</p>
+        </section>
+
+        <section class="section" id="formSection">
+            <h2>Form Pendaftaran</h2>
+            <form id="inputForm" method="POST" action="index.php">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Umur:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="password">Kata Sandi:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Kirim">
+            </form>
+           
+            <div class="output" id="output">
+               
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <h2>Tentang Saya</h2>
+            <p><b>Nama: Junesty Todingbua'</b><br>
+                <b>NIM: 2309106140</b><br>
+                <b>Kelas Praktikum: C2 23</b><br>
+                <b>Praktikum Web: <a href="https://classroom.google.com/c/NzEwMjM1NjcxOTQw/a/NzA2NzIwODI3NTg0/details" target="blank">Posttest4</a><br>
+            </p>
+            <button onclick="showPopup()">Info Lainnya</button>
+        </section>
+
+        <div class="popup-overlay" id="popupOverlay"></div>
+        <div class="popup-box" id="popupBox">
+            <h3>Informasi Tambahan</h3>
+            <p>Saya juga aktif dalam membantu penyelamatan hewan terlantar di kota saya.</p>
+            <button onclick="closePopup()">Tutup</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Komunitas Pecinta Hewan - 2024</p>
+    </footer>
+
+    <script>
+        
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            let button = document.getElementById('darkModeToggle');
+            button.innerText = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        }
+
+        function toggleNavbar() {
+            var navbarLinks = document.getElementById("navbar-links");
+            navbarLinks.style.display = navbarLinks.style.display === "flex" ? "none" : "flex";
+        }
+
+        function showPopup() {
+            document.getElementById("popupOverlay").classList.add('active');
+            document.getElementById("popupBox").classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById("popupOverlay").classList.remove('active');
+            document.getElementById("popupBox").classList.remove('active');
+        }
+    </script>
+
+</body>
+</html>
